@@ -13,7 +13,9 @@ public class DriverCentricTeleOp extends OpMode {
     private MecanumDrive mecanumDrive;
 
     private Intake intake;
-//    private Outtake outtake;
+
+
+    private Outtake outtake;
 //    private Gate gate;
 
 //    private Intake intake;
@@ -40,6 +42,7 @@ public class DriverCentricTeleOp extends OpMode {
 //        delivery = new Delivery(this);
         mecanumDrive = new MecanumDrive(this);
         intake = new Intake(this);
+        outtake = new Outtake(this);
 
     }
 
@@ -47,6 +50,7 @@ public class DriverCentricTeleOp extends OpMode {
     public void loop() {
         mecanumDrive.teleOp();
         intake.teleOp(this);
+        outtake.teleOp(this);
 
 
     }
