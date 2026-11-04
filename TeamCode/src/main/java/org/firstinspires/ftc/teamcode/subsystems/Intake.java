@@ -32,18 +32,18 @@ public class Intake {
     public void teleOp(OpMode opmode) {
         if(driver2.right_trigger > 0.1) {
 //            intake_motor.setVelocity(1350);
-            intake_motor_inner.setPower(-0.30);
+            intake_motor_inner.setPower(-0.6);
         } else if (driver2.right_bumper) {
-            intake_motor_inner.setPower(.3);
+            intake_motor_inner.setPower(.6);
         } else {
             intake_motor_inner.setPower(0);
         }
 
         if(driver2.left_trigger > 0.1) {
-            intake_motor_outer.setPower(-0.3);
+            intake_motor_outer.setPower(0.7);
 
         } else if (driver2.left_bumper) {
-            intake_motor_outer.setPower(0.3);
+            intake_motor_outer.setPower(-0.7);
         } else {
             intake_motor_outer.setPower(0);
         }

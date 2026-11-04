@@ -26,7 +26,7 @@ public class Outtake {
 
     public void teleOp(OpMode opmode) {
         if(driver2.b){
-            outtake_motor.setVelocity(1500);
+            outtake_motor.setVelocity(1600);
         } else {
             outtake_motor.setVelocity(0);
         }
