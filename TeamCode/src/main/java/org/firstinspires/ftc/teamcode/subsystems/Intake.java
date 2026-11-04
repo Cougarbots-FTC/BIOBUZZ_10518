@@ -14,7 +14,10 @@ public class Intake {
     private final Gamepad driver1, driver2;
     public DcMotor intake_motor  = null;
 
-    private DcMotor intake_motor_outer, intake_motor_inner;
+    private final double OUTER_POWER = 0.8;
+    private final double INNER_POWER = 0.6;
+
+    private final DcMotor intake_motor_outer, intake_motor_inner;
     public Intake(OpMode opmode) {
         driver1 = opmode.gamepad1;
         driver2 = opmode.gamepad2;
@@ -32,20 +35,30 @@ public class Intake {
     public void teleOp(OpMode opmode) {
         if(driver2.right_trigger > 0.1) {
 //            intake_motor.setVelocity(1350);
-            intake_motor_inner.setPower(-0.6);
+            //negative
+            intake_motor_inner.setPower(-INNER_POWER);
         } else if (driver2.right_bumper) {
-            intake_motor_inner.setPower(.6);
+            //pos
+            intake_motor_inner.setPower(INNER_POWER);
         } else {
             intake_motor_inner.setPower(0);
         }
 
         if(driver2.left_trigger > 0.1) {
-            intake_motor_outer.setPower(0.7);
+            //pos
+            intake_motor_outer.setPower(OUTER_POWER);
 
         } else if (driver2.left_bumper) {
-            intake_motor_outer.setPower(-0.7);
+
+            //neg
+            intake_motor_outer.setPower(-OUTER_POWER);
         } else {
             intake_motor_outer.setPower(0);
+        }
+
+        if(driver2.a) {
+            intake_motor_inner.setPower(-0.65);
+            intake_motor_outer.setPower(0.8);
         }
 
 

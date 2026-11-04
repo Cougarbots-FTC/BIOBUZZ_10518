@@ -11,6 +11,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
 public class Outtake {
+    private final double OUTTAKE_VELOCITY = 1550;
     private final Gamepad driver1, driver2;
     public DcMotorEx outtake_motor  = null;
     public Outtake(OpMode opmode) {
@@ -26,7 +27,7 @@ public class Outtake {
 
     public void teleOp(OpMode opmode) {
         if(driver2.b){
-            outtake_motor.setVelocity(1600);
+            outtake_motor.setVelocity(OUTTAKE_VELOCITY);
         } else {
             outtake_motor.setVelocity(0);
         }

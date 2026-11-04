@@ -1,10 +1,14 @@
 package org.firstinspires.ftc.teamcode.subsystems;
+//import static java.lang.Thread.sleep;
 
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 public class MecanumDrive {
     public DcMotor front_left = null;
@@ -15,6 +19,10 @@ public class MecanumDrive {
     private final Gamepad driver1, driver2;
 
     public MecanumDrive(OpMode opMode) {
+
+
+
+
 
         //make the controllers
 
@@ -32,9 +40,25 @@ public class MecanumDrive {
         
         front_right.setDirection(DcMotor.Direction.REVERSE);
         back_right.setDirection(DcMotor.Direction.REVERSE);
+        front_left.setDirection(DcMotorSimple.Direction.REVERSE);
 
         //here add motor reversals and stuff
     }
+
+//    public void startWait(double seconds) {
+//        timer.reset();
+//        targetWaitTime = seconds;
+//        isWaiting = true;
+//    }
+//
+//    public boolean isWaitComplete() {
+//        if (!isWaiting) return true;
+//        if (timer.seconds() >= targetWaitTime) {
+//            isWaiting = false;
+//            return true;
+//        }
+//        return false;
+//    }
 
     //teleop function that will actually be called in teleop
 
@@ -65,6 +89,27 @@ public class MecanumDrive {
         back_right.setPower(rightBackPower);
 
     }
+//quality of life functions for auto may uncomment later
+//    public void forward(double power) {
+//        this.front_left.setPower(power);
+//        this.front_right.setPower(power);
+//        this.back_left.setPower(power);
+//        this.back_right.setPower(power);
+//    }
+
+//    public void strafe_right(double power) {
+//        this.front_left.setPower(power);
+//        this.front_right.setPower(-power);
+//        this.back_left.setPower(-power);
+//        this.back_right.setPower(power);
+//    }
+
+//    public void strafe_right(double power) {
+//        this.front_left.setPower(-power);
+//        this.front_right.setPower(power);
+//        this.back_left.setPower(power);
+//        this.back_right.setPower(-power);
+//    }
 
     //maybe add auto function here????
 }

@@ -20,10 +20,10 @@ public class Auto extends LinearOpMode {
 //        Gate gate = new Gate(this);
 
         if (opModeIsActive()) {
-            mecanumDrive.front_left.setPower(-0.25);
-            mecanumDrive.front_right.setPower(-0.25);
-            mecanumDrive.back_left.setPower(-0.25);
-            mecanumDrive.back_right.setPower(-0.25);
+            mecanumDrive.front_left.setPower(0.25);
+            mecanumDrive.front_right.setPower(0.25);
+            mecanumDrive.back_left.setPower(0.25);
+            mecanumDrive.back_right.setPower(0.25);
             sleep(1000);
             mecanumDrive.front_left.setPower(0);
             mecanumDrive.front_right.setPower(0);
