@@ -25,8 +25,8 @@ public class Outtake {
     }
 
     public void teleOp(OpMode opmode) {
-        if(driver2.left_trigger > 0.1) {
-            outtake_motor.setVelocity(1350);
+        if(driver2.b){
+            outtake_motor.setVelocity(1500);
         } else {
             outtake_motor.setVelocity(0);
         }
