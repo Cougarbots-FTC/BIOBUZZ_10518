@@ -32,10 +32,20 @@ public class Intake {
 //        intake_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    public void turnOn() {
+        intake_motor_outer.setPower(OUTER_POWER);
+        intake_motor_inner.setPower(-INNER_POWER);
+    }
+
+    public void turnOff() {
+        intake_motor_outer.setPower(0);
+        intake_motor_inner.setPower(0);
+    }
+
     public void teleOp(OpMode opmode) {
         if(driver2.right_trigger > 0.1) {
 //            intake_motor.setVelocity(1350);
-            //negative
+            //negative and forward
             intake_motor_inner.setPower(-INNER_POWER);
         } else if (driver2.right_bumper) {
             //pos

@@ -90,26 +90,27 @@ public class MecanumDrive {
 
     }
 //quality of life functions for auto may uncomment later
-//    public void forward(double power) {
-//        this.front_left.setPower(power);
-//        this.front_right.setPower(power);
-//        this.back_left.setPower(power);
-//        this.back_right.setPower(power);
-//    }
+    public void forward(double power) {
+        this.front_left.setPower(-power);
+        this.front_right.setPower(-power);
+        this.back_left.setPower(-power);
+        this.back_right.setPower(-power);
+        //figure out why its negative later
+    }
 
-//    public void strafe_right(double power) {
-//        this.front_left.setPower(power);
-//        this.front_right.setPower(-power);
-//        this.back_left.setPower(-power);
-//        this.back_right.setPower(power);
-//    }
+    public void strafe_right(double power) {
+        this.front_left.setPower(power);
+        this.front_right.setPower(-power);
+        this.back_left.setPower(-power);
+        this.back_right.setPower(power);
+    }
 
-//    public void strafe_right(double power) {
-//        this.front_left.setPower(-power);
-//        this.front_right.setPower(power);
-//        this.back_left.setPower(power);
-//        this.back_right.setPower(-power);
-//    }
+    public void strafe_left(double power) {
+        this.front_left.setPower(-power);
+        this.front_right.setPower(power);
+        this.back_left.setPower(power);
+        this.back_right.setPower(-power);
+    }
 
     //maybe add auto function here????
 }

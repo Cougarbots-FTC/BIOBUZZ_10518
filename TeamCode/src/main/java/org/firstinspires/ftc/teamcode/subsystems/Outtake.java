@@ -27,6 +27,14 @@ public class Outtake {
 
     }
 
+    public void turnOn() {
+        outtake_motor.setVelocity(OUTTAKE_VELOCITY);
+    }
+
+    public void turnOff() {
+        outtake_motor.setVelocity(0);
+    }
+
     public void teleOp(OpMode opmode) {
         if(driver2.b) {
             outtake_motor.setVelocity(OUTTAKE_VELOCITY);
