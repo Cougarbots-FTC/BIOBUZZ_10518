@@ -58,29 +58,29 @@ public class PIDOuttake {
         //outtake.setPower(driver2.left_stick_y);
 
 
-//        if (driver2.bWasPressed()) {
-//            stepIndex = (stepIndex + 1) % stepSizes.length;
-//            //outtakeVelocity += 5;
-//        }
-//
-//        if (driver2.dpadLeftWasPressed()) {
-//            F -= stepSizes[stepIndex];
-//        }
-//        if (driver2.dpadRightWasPressed()) {
-//            F += stepSizes[stepIndex];
-//        }
-//        if (driver2.dpadUpWasPressed()) {
-//            P += stepSizes[stepIndex];
-//        }
-//        if (driver2.dpadDownWasPressed()) {
-//            P -= stepSizes[stepIndex];
-//        }
+        if (driver2.bWasPressed()) {
+            stepIndex = (stepIndex + 1) % stepSizes.length;
+            //outtakeVelocity += 5;
+        }
+
+        if (driver2.dpadLeftWasPressed()) {
+            F -= stepSizes[stepIndex];
+        }
+        if (driver2.dpadRightWasPressed()) {
+            F += stepSizes[stepIndex];
+        }
+        if (driver2.dpadUpWasPressed()) {
+            P += stepSizes[stepIndex];
+        }
+        if (driver2.dpadDownWasPressed()) {
+            P -= stepSizes[stepIndex];
+        }
 
 
 // For tuning the PID Controller
-        //PIDFCoefficients pidfCoefficients = new PIDFCoefficients(P, 0, 0, F);
-        //outtake.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
-
+//        PIDFCoefficients pidfCoefficients = new PIDFCoefficients(P, 0, 0, F);
+//        outtake.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
+//
 //        outtake.setVelocity(currentVelocity);
 
 
