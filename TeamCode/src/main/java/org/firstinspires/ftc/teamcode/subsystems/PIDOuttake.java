@@ -17,8 +17,10 @@ public class PIDOuttake {
     private double lowVelocity;
     private double currentVelocity;
 
-    private double F = 20.3; //says how much power the motor should have, -1
-    private double P = 17.1;//dampener 82.9
+    //tune f first then p
+    //ill start out f with like 20
+    private double F = 20; //says how much power the motor should have, -1
+    private double P = 0;//dampener 82.9
     double [] stepSizes = {10, 1, 0.1, 0.01, 0.001, 0.0001};
     int stepIndex = 1;
 
@@ -44,6 +46,8 @@ public class PIDOuttake {
         if (driver2.left_trigger > 0.1) {
 //            outtake.setPower(-driver2.left_trigger);
 //            outtake.setVelocity(outtakeVelocity);
+
+            //i feel like its bad to have this stuff running every loop (look below)
 
             PIDFCoefficients pidfCoefficients = new PIDFCoefficients(P, 0, 0, F);
             outtake.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
