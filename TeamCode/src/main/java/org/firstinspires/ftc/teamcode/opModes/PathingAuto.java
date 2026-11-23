@@ -90,7 +90,7 @@ public class PathingAuto extends OpMode {
 //            .setStart(() -> {
 //                //it does this on start whatever that means
 //                //i would spool up outtake i guess/set target velocity
-//                //put some sort of pidOuttake.start() or smth to realize that
+//                  pidOuttake.turnOnOuttake();
 //                //also start a timer to check later if its taking too long
 //                    })
 //            .setExecute(()-> {

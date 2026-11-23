@@ -40,8 +40,10 @@ public class MecanumDrive {
         
 //        front_right.setDirection(DcMotor.Direction.REVERSE);
 //        back_right.setDirection(DcMotor.Direction.REVERSE);
-        front_left.setDirection(DcMotorSimple.Direction.REVERSE);
-
+//        front_left.setDirection(DcMotorSimple.Direction.REVERSE);
+        front_right.setDirection(DcMotorSimple.Direction.REVERSE);
+        back_right.setDirection(DcMotorSimple.Direction.REVERSE);
+        back_left.setDirection(DcMotorSimple.Direction.REVERSE);
         //here add motor reversals and stuff
     }
 
@@ -71,7 +73,7 @@ public class MecanumDrive {
             speed = 1;
         }
 
-        double vertical = driver1.left_stick_y;
+        double vertical = -driver1.left_stick_y;
         double horizontal = driver1.left_stick_x * -1.1; //to negate imperfect strafing
         double pivot = driver1.right_stick_x;
 
