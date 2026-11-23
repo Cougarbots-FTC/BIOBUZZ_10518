@@ -5,6 +5,7 @@ package org.firstinspires.ftc.teamcode.subsystems;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -32,6 +33,7 @@ public class Intake {
             intake_motor_inner = hardwareMap.get(DcMotor.class, "innerIntakeMotor");
             //this is the one that actually pushes the balls into the outtake
 //        intake_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            intake_motor_inner.setDirection(DcMotorSimple.Direction.REVERSE);
 
         } catch (IllegalArgumentException e) {
             intake_motor_inner = null;
