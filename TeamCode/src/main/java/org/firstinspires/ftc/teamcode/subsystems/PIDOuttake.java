@@ -41,6 +41,15 @@ public class PIDOuttake {
 
 //        opmode.telemetry.addData("Init Complete")
     }
+    //might remove
+        private void updatePIDF() {
+        outtake.setPIDFCoefficients(
+            DcMotor.RunMode.RUN_USING_ENCODER,
+            new PIDFCoefficients(P, 0.0, 0.0, F)
+        );
+    }
+
+    //might remove
 
     public void teleOp(OpMode opmode) {
         if (driver2.left_trigger > 0.1) {
@@ -49,8 +58,6 @@ public class PIDOuttake {
 
             //i feel like its bad to have this stuff running every loop (look below)
 
-            PIDFCoefficients pidfCoefficients = new PIDFCoefficients(P, 0, 0, F);
-            outtake.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
 
             outtake.setVelocity(outtakeVelocity);
         } else if(driver2.left_bumper){
@@ -65,19 +72,25 @@ public class PIDOuttake {
         if (driver2.bWasPressed()) {
             stepIndex = (stepIndex + 1) % stepSizes.length;
             //outtakeVelocity += 5;
+            //might remove these
+            updatePIDF();
         }
 
         if (driver2.dpadLeftWasPressed()) {
             F -= stepSizes[stepIndex];
+            updatePIDF();
         }
         if (driver2.dpadRightWasPressed()) {
             F += stepSizes[stepIndex];
+            updatePIDF();
         }
         if (driver2.dpadUpWasPressed()) {
             P += stepSizes[stepIndex];
+            updatePIDF();
         }
         if (driver2.dpadDownWasPressed()) {
             P -= stepSizes[stepIndex];
+            updatePIDF();
         }
 
 
